@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Student Result Manager</h1>
+    <section class="container">
+      <div class="input-value">
+        <input
+          type="text"
+          name="student-name"
+          id="student-name"
+          placeholder="Student Name"
+        />
+      </div>
+      <div class="input-value">
+        <input type="number" name="maths" id="math" placeholder="Math Marks" />
+      </div>
+      <div class="input-value">
+        <input
+          type="number"
+          name="science"
+          id="science"
+          placeholder="Science Marks"
+        />
+      </div>
+      <div class="input-value">
+        <input
+          type="number"
+          name="English"
+          id="english"
+          placeholder="English Marks"
+        />
+      </div>
+      <div class="record">
+        <button type="submit" onclick="addRecords()">Add Record</button>
+      </div>
+    </section>
+    <!-- <section class="row2"> -->
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Name</th>
+          <th>Math</th>
+          <th>Science</th>
+          <th>English</th>
+          <th>Total</th>
+          <th>Average</th>
+        </tr>
+      </thead>
+      <tbody id="data"></tbody>
+    </table>
+    <!-- </section> -->
+    <div id="data"></div>
+    <script>
+      const records = [];
+      function addRecords() {
+        const studentName = document.getElementById("student-name").value;
+        const math = document.getElementById("math").value;
+        const science = document.getElementById("science").value;
+        const english = document.getElementById("english").value;
+
+        const m = Number(math);
+        const s = Number(science);
+        const e = Number(english);
+
+        const total = m + s + e;
+        const average = (total / 3).toFixed(2);
+
+        records.push([studentName, m, s, e, total, average]);
+
+        console.log(records);
+
+        addDisplay();
+        clearDisplay();
+      }
+
+      function addDisplay() {
+        const table = document.getElementById("data");
+        table.innerHTML = "";
+        records.forEach((rec, index) => {
+          const row = `<tr>
+            <td>${index + 1}</td>
+            <td>${rec[0]}</td>
+            <td>${rec[1]}</td>
+            <td>${rec[2]}</td>
+            <td>${rec[3]}</td>
+            <td>${rec[4]}</td>
+            <td>${rec[5]}</td>
+            </tr>`;
+          table.innerHTML += row;
+        });
+      }
+
+      function clearDisplay() {
+        document.getElementById("student-name").value = "";
+        document.getElementById("math").value = "";
+        document.getElementById("science").value = "";
+        document.getElementById("english").value = "";
+      }
+    </script>
+  </body>
+</html>
