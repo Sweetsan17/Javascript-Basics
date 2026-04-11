@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>condition JS</title>
+  </head>
+  <body>
+    <h1>Condition statement</h1>
+    <div>
+      <label for="age">Age:</label>
+      <input type="text" name="age" id="age" />
+    </div>
+    <br />
+    <div>
+      <button onclick="check()">Check</button>
+    </div>
+    <div>
+      <p id="result"></p>
+    </div>
+    <script>
+      function check() {
+        let age = Number(document.getElementById("age").value);
+        if (!isNaN(age)) {
+          if (age > 18) {
+            console.log("Eligible to vote");
+            console.log(age);
+            document.getElementById("result").innerText = "Eligible to vote";
+          } else {
+            console.log("Not eligible to vote");
+            console.log(age);
+            document.getElementById("result").innerText =
+              " Not Eligible to vote";
+          }
+        } else {
+          console.log("In vaild Data Type");
+          document.getElementById("result").innerText = "In vaild Data Type";
+        }
+      }
+    </script>
+  </body>
+</html>
