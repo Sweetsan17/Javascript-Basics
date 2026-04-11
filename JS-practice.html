@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>practice JS</title>
+  </head>
+  <body>
+    <h1 id="title">Welcome to Demo</h1>
+    <h2 id="cd">JS is a programming language</h2>
+    <p id="js"></p>
+    <section class="container">
+      <div class="input-data">
+        <input
+          type="text"
+          name="name"
+          id="st-name"
+          placeholder="Name"
+          required
+        />
+      </div>
+      <div class="input-data">
+        <input type="text" name="Ict" id="It" placeholder="ICT" />
+      </div>
+      <div class="input-data">
+        <input
+          type="text"
+          name="Commerce"
+          id="business"
+          placeholder="Commerce"
+          required
+        />
+      </div>
+      <div class="input-data">
+        <input
+          type="text"
+          name="E-tech"
+          id="e-tech"
+          placeholder="E-tech"
+          required
+        />
+      </div>
+    </section>
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Name</th>
+          <th>Ict</th>
+          <th>Commerce</th>
+          <th>E-tech</th>
+          <th>Total</th>
+          <th>Average</th>
+        </tr>
+      </thead>
+      <tbody id="info"></tbody>
+    </table>
+    <button type="submit" onclick="click()">Submit</button>
+    <button type="button" onclick="addInfo()">Add Details</button>
+    <script src="practice.js"></script>
+    <script>
+      // // iphone amout
+      // const $price = 100;
+      // let product = "iphone16";
+      // const tax = 20;
+      // console.log(product);
+      // let total = $price + tax;
+      // console.log(total);
+      // //   apple
+      // let fruitName = "Apple";
+      // let count = 10;
+      // let price = 100;
+      // let cost = count * price;
+      // console.log(fruitName);
+      // console.log(cost);
+      // //   DOM practice
+      // //   id selector
+      // let doc = document.getElementById("title");
+      // console.log(doc.textContent);
+      // doc.textContent = "bye world";
+      // console.log(doc.textContent);
+      // //   class selector and tags
+      // let cls = document.getElementById("cd");
+      // // console.log(cls);
+      // console.log(cls.textContent);
+      // // console.log(cls[0]);
+
+      // //    queryselector (id,class,tag)
+      // cls = document.querySelector("cd");
+      // console.log(cls);
+      // // function
+      // function multiply(a, b) {
+      //   return a * b;
+      //   console.log(multiply);
+      // }
+      // let result = multiply(9, 12);
+      // document.getElementById("js").innerHTML = "result is" + result;
+
+      // function add(a, b) {
+      //   return a + b;
+      //   console.log(add);
+      // }
+      // let point = add(9, 9);
+      // document.getElementById("js").innerHTML = "result is" + point;
+      // var av=[];
+      // av=["a",'b',"c",12,14];
+      // console.log(av);
+      // av[0]="benten";
+      // console.log(av);
+      // av[5]=15;
+      // console.log(av)
+      function addInfo() {
+        const marks = [];
+
+        const studentName = document.getElementById(`st-name`).value;
+        const Ict = document.getElementById(`It`).value;
+        const Commerce = document.getElementById(`business`).value;
+        const eTech = document.getElementById(`e-tech`).value;
+
+        const i = Number(Ict);
+        const c=Number(Commerce);
+        const e=Number(eTech);
+
+        const Total=i+c+e;
+        
+      }
+    </script>
+  </body>
+</html>
