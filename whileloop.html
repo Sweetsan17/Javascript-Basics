@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>whileloop</title>
+  </head>
+  <body>
+    <h1>Whileloop JS</h1>
+    <script>
+      // While loop
+      let count = 0; // 1. Initialization
+      // when it check it's allow
+      while (count < 5) {
+        // 2. Condition
+        console.log("Count is: " + count);
+        count++; // 3. Iteration (Crucial!)
+      }
+      // Do while loop
+      let num = 1; // Initialization
+      //  when it execution is done then check
+      do {
+        console.log(num);
+        num++;
+      } while (num < 10);
+      console.log("exit");
+      // for loop
+      for (let price = 1; price <= 10; ) {
+        // Initialization and declaration at the same time
+        // and validation i mean condition
+        console.log(price);
+        price++; // updation as increment operator
+      }
+      // nested loop
+      for (let i = 1; i <= 6; i++) {
+        let stars = " ";
+        for (let j = 1; j <= i; j++) {
+          stars += "*";
+        }
+        console.log(stars);
+      }
+    </script>
+  </body>
+</html>
